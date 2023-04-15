@@ -23,7 +23,7 @@ const Home: FC<Customers> = ({ customers }) => {
   };
 
   const handleAddNewCustomer = (newCustomer: Customer) => {
-    setFilteredCustomers((prevState) => [...prevState, newCustomer]);
+     setFilteredCustomers((prevState) => [newCustomer, ...prevState]);
   };
 
   return (
