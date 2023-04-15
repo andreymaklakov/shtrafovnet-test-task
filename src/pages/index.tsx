@@ -1,4 +1,4 @@
-import { GetStaticProps, NextPage } from "next";
+import { GetServerSideProps, NextPage } from "next";
 import Head from "next/head";
 
 import Home from "@/components/screens/Home";
@@ -20,13 +20,18 @@ const HomePage: NextPage<Customers> = ({ customers }) => {
   );
 };
 
-export const getStaticProps: GetStaticProps<Customers> = async () => {
+export const getServerSideProps: GetServerSideProps<Customers> = async () => {
   try {
     const customers = await CustomerService.getCustomers();
+    
+        const sortedCustomers = customers.sort(
+      (a, b) =>
+        new Date(b.created_at).getTime() - new Date(a.created_at).getTime()
+    );
 
     return {
       props: {
-        customers,
+        customers: sortedCustomers,
       },
     };
   } catch (error) {
