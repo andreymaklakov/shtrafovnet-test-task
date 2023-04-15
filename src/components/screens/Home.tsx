@@ -11,22 +11,7 @@ const Home: FC<Customers> = ({ customers }) => {
   const [filteredCustomers, setFilteredCustomers] =
     useState<Customer[]>(customers);
 
-  useEffect(() => {
-    if (filteredCustomers?.length) {
-      setFilteredCustomers((prevState) => {
-        const customers = [...prevState];
-
-        return customers.sort(
-          (a, b) =>
-            new Date(b.created_at).getTime() - new Date(a.created_at).getTime()
-        );
-      });
-    }
-  }, [filteredCustomers]);
-
   const handleSubmit = (value: string) => {
-    console.log(value);
-
     setFilteredCustomers(
       customers.filter(
         (customer) =>
