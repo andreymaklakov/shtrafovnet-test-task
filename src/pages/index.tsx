@@ -21,13 +21,23 @@ const HomePage: NextPage<Customers> = ({ customers }) => {
 };
 
 export const getStaticProps: GetStaticProps<Customers> = async () => {
-  const customers = await CustomerService.getCustomers();
+  try {
+    const customers = await CustomerService.getCustomers();
 
-  return {
-    props: {
-      customers,
-    },
-  };
+    return {
+      props: {
+        customers,
+      },
+    };
+  } catch (error) {
+    console.log(error);
+
+    return {
+      props: {
+        customers: [],
+      },
+    };
+  }
 };
 
 export default HomePage;
