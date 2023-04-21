@@ -2,7 +2,8 @@
 
 <h3>Check app interface: https://teal-lollipop-0025a4.netlify.app/</h3>
 
-```First time can be errors, If error occured just refresh page```
+
+```First time can be errors and long loading, If error occured just refresh page```
 
 
 
