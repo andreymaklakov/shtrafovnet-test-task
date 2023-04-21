@@ -1,6 +1,7 @@
 <h3>Test task: https://gist.github.com/AlexMozyrskiy/a612cb53de40c93bb011d7b54238a340</h3>
 
 <h3>Check app interface: https://teal-lollipop-0025a4.netlify.app/</h3>
+If error occured just refresh page
 
 
 
